@@ -1,4 +1,25 @@
-//DP Bottom Up
+//Greedy Forward
+//O(n) Time
+//O(1) Space
+class Solution {
+public:
+    bool canJump(vector<int>& nums) {
+        int maxJump=nums[0];
+        int n=nums.size();
+
+        for(int i=0;i<=maxJump;i++){
+            if(maxJump>=(n-1))return true;
+            
+            maxJump=max(maxJump,i+nums[i]);
+        }
+
+        return false;
+    }
+};
+
+//Related solutions below:
+
+//Greedy Reverse
 //O(n) Time
 //O(1) Space
 class Solution {
